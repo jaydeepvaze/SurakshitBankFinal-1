@@ -38,11 +38,9 @@ public class MerchantServiceImpl implements MerchantService {
 	
 	@Override
 	public String checkEmailIdValidity(String emailID) throws SurakshitException, Exception {
-		System.out.println("Reached MerchantServiceImpl.java" + emailID);
 		User customer = userDataUtility.getUserDtlsFromEmailId(emailID);
 		if(customer.getRole().equals("CUSTOMER")) {
 			String customerEmailID = customer.getEmailId();
-			System.out.println("Create transaction!");
 			return customerEmailID;
 		}
 		else
